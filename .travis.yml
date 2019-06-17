@@ -7,7 +7,7 @@ script:
         - docker images rybalka/docker-react
 
 before_deploy:
-        - docker login - rybalka -p a1234567
+        - docker login -u rybalka -p a1234567
 
 docker:
         provider: script
