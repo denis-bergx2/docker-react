@@ -3,4 +3,15 @@ services:
         -docker
 
 script:
-        -docker build -t docker-react .
+        - docker build -t rybalka/docker-react .
+        - docker images rybalka/docker-react
+
+before_deploy:
+        - docker login - rybalka -p a1234567
+
+docker:
+        provider: script
+        script: docker push rybalka/docker-react
+        on:
+                branch: master
+
