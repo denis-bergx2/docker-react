@@ -1,6 +1,6 @@
 sudo: required
 services: 
-        -docker
+        - docker
 
 script:
         - docker build -t rybalka/docker-react .
@@ -9,7 +9,7 @@ script:
 before_deploy:
         - docker login -u rybalka -p a1234567
 
-docker:
+deploy:
         provider: script
         script: docker push rybalka/docker-react
         on:
